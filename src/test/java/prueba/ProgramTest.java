@@ -12,4 +12,12 @@ public class ProgramTest {
         assertEquals(actual,expected);
 
     }
+
+    @Test
+    public void sumar5y8(){
+        final int expected=13;
+        final int actual=new Program().suma(5,8);
+        assertEquals(actual,expected);
+
+    }
 }
