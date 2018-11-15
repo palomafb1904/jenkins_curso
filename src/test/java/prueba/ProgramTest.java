@@ -1,23 +1,22 @@
 package prueba;
 
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ProgramTest {
 
     @Test
-    public void sumar5y7(){
+    public void sumar5y7Test(){
         final int expected=12;
         final int actual=new Program().suma(5,7);
         assertEquals(actual,expected);
-
     }
 
     @Test
-    public void sumar5y8(){
+    public void sumar5y8Test(){
         final int expected=13;
         final int actual=new Program().suma(5,8);
         assertEquals(actual,expected);
-
     }
 }
