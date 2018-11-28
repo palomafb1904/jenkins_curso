@@ -8,7 +8,7 @@ public class ProgramTest {
 
     @Test
     public void sumar5y7Test(){
-        final int expected=15;
+        final int expected=14;
         final int actual=new Program().suma(7,7);
         assertEquals(actual,expected);
     }
