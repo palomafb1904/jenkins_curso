@@ -9,6 +9,7 @@
    }
 }*/
 node {
+   checkout scm
    stage('Compile') {
       echo 'Comienza la compilacion'
       mvn compile
