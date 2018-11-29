@@ -9,7 +9,13 @@
    }
 }*/
 node {
-   stage('Build') {
-      echo 'Hola Mundooooo!!!!'
+   stage('Compile') {
+      echo 'Comienza la compilacion'
+   }
+   stage('Test') {
+      echo 'Probando, probando...'
+   }
+   stage('Empaquetar') {
+      echo 'Comienza la empaquetacion'
    }
 }
