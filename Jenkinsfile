@@ -8,7 +8,7 @@
       }
    }
 }*/
-node{
+/*node {
    checkout scm
    stage('Compile') {
       echo 'Comienza la compilacion'
@@ -33,6 +33,26 @@ node{
          maven:'Maven Defecto (3.6)'
       ){
          sh 'mvn package'
+      }
+   }
+}*/
+node {
+   checkout scm
+   stage('Compile') {
+      echo 'Comienza la compilacion'
+      sh 'mvn compile'
+      echo 'Compilado...' 
+   }
+   stage('Test') {
+      echo 'Probando, probando...'
+      sh 'mvn test'
+   }
+   stage('Empaquetar') {
+      echo 'Comienza la empaquetacion'
+      try{
+         sh 'mvn package'
+      }finally{
+         deleteDir()
       }
    }
 }
