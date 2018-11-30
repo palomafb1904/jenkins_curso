@@ -8,7 +8,8 @@
       }
    }
 }*/
-/*node {
+/* con el with maven funcionando
+node {
    checkout scm
    stage('Compile') {
       echo 'Comienza la compilacion'
@@ -46,6 +47,7 @@ node {
    stage('Test') {
       echo 'Probando, probando...'
       sh 'mvn test'
+      junit '**/*.xml'
    }
    stage('Empaquetar') {
       echo 'Comienza la empaquetacion'
