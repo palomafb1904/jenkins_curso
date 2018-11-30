@@ -1,13 +1,39 @@
-/*pipeline {
+pipeline {
    agent any
    stages {
-      stage('Etapa 1') {
+      stage('Compilar') {
          steps {
-           echo 'Hola mundo'
+            echo 'Empezando la compilacion...'
+            withMaven(
+               maven:'Maven Defecto (3.6)'
+            ){
+               sh 'mvn compile'
+            }
+            echo 'Compilado...'
+         }
+      }
+      stage('Test'){
+         steps {
+            echo 'Probando, probando...'
+            withMaven(
+               maven:'Maven Defecto (3.6)'
+            ){
+               sh 'mvn test'
+            }
+         }
+      }
+      stage('Empaquetar'){
+         steps {
+            echo 'Comienza la empaquetacion'
+            withMaven(
+               maven:'Maven Defecto (3.6)'
+            ){
+               sh 'mvn package'
+            }
          }
       }
    }
-}*/
+}
 /* con el with maven funcionando
 node {
    checkout scm
@@ -37,7 +63,7 @@ node {
       }
    }
 }*/
-node {
+/*node {
    checkout scm
    stage('Compile') {
       echo 'Comienza la compilacion'
@@ -47,7 +73,7 @@ node {
    stage('Test') {
       echo 'Probando, probando...'
       sh 'mvn test'
-      junit '**/*.xml'
+      junit '** /*.xml'
    }
    stage('Empaquetar') {
       echo 'Comienza la empaquetacion'
@@ -58,4 +84,4 @@ node {
          //deleteDir()
       }
    }
-}
+}*/
