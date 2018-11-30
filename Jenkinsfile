@@ -40,7 +40,7 @@ pipeline {
       failure {
          echo 'Fallando....'  
       }
-      sucess {
+      success {
          echo 'Exito!!!'  
       }
       changed {
