@@ -52,7 +52,8 @@ node {
       try{
          sh 'mvn package'
       }finally{
-         deleteDir()
+         echo 'Finally'
+         //deleteDir()
       }
    }
 }
