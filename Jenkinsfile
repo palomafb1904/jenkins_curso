@@ -33,6 +33,20 @@ pipeline {
          }
       }
    }
+   post{
+      always {
+         deleteDir()
+      }
+      failure {
+         echo 'Fallando....'  
+      }
+      sucess{
+         echo 'Exito!!!'  
+      }
+      changed{
+         echo 'Cambioooooo'
+      }
+   }
 }
 /* con el with maven funcionando
 node {
