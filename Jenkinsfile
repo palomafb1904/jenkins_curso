@@ -8,7 +8,7 @@
       }
    }
 }*/
-node (master) {
+node(master) {
    checkout scm
    stage('Compile') {
       echo 'Comienza la compilacion'
