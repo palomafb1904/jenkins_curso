@@ -21,8 +21,18 @@ node(master) {
    }
    stage('Test') {
       echo 'Probando, probando...'
+      withMaven(
+         maven:'Maven Defecto (3.6)'
+      ){
+         sh 'mvn test'
+      }
    }
    stage('Empaquetar') {
       echo 'Comienza la empaquetacion'
+      withMaven(
+         maven:'Maven Defecto (3.6)'
+      ){
+         sh 'mvn package'
+      }
    }
 }
