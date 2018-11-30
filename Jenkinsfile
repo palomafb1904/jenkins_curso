@@ -124,7 +124,7 @@ node {
     }
 }*/
 
-node { 
+node ('master'){ 
     checkout scm
     stage('Compilar') {
 	   echo "Comienza la compilacion..."
